@@ -27,8 +27,12 @@ const weather = ( location ) =>{
         response.json().then(( data ) => {
             console.log(data)
             if(data.error){
-                messageOne.textContent = data.error
-                messageThree.textContent = ''
+                messageOne.textContent = ''
+                messageTwo.textContent = ''
+                messageThree.textContent =  data.error
+                messageFour.textContent = ''
+                messageFive.textContent = ''
+                messageSix.textContent = ''
             }else{
                 messageOne.textContent = `${data.forecast.temperature} °C`
                 messageTwo.textContent = `Real Feel like ${data.forecast.feelslike} °C`
