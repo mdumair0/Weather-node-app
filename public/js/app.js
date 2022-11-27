@@ -6,6 +6,7 @@ const messageThree = document.querySelector('#mThree')
 const messageFour = document.querySelector('#mFour')
 const messageFive = document.querySelector('#mFive')
 const messageSix = document.querySelector('#mSix')
+const divBox = document.querySelector('.wBox2')
 const image1 = document.querySelector('[data-label="image1"] img')
 
 weatherLoc.addEventListener('submit', ( event )=>{
@@ -15,10 +16,7 @@ weatherLoc.addEventListener('submit', ( event )=>{
     image1.src = ''
     messageOne.textContent = ''
     messageTwo.textContent = 'Loading...'
-    messageThree.textContent = ''
-    messageFour.textContent = ''
-    messageFive.textContent = ''
-    messageSix.textContent = ''
+    divBox.style.display = "none";
     weather(location)
 })
 
