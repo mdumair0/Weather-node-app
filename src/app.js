@@ -2,7 +2,7 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 
 const req = require('request')
 const geoloc = require('../util/geocode')
@@ -25,16 +25,16 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicPath))
 
 
-app.get('',(req,res)=>{
-    res.render('index',{
+app.get('', (req, res) => {
+    res.render('index', {
         title:'Weather',
         name:'MOHAMMAD UMAIR'
     })
 })
 
-app.get('/help',(req,res)=>{
-    res.render('help',{
-        title:'HELP',
+app.get('/contact', (req, res) => {
+    res.render('contact',{
+        title:'CONTACT',
         name:'MOHAMMAD UMAIR'
     })
 })
@@ -74,11 +74,10 @@ app.get('/product',(req,res)=>{
     res.send({error:'Please provide a search term.'})
 })
 
-
-app.get('/help/*',(req,res)=>{
+app.get('/contact/*', (req, res) => {
     res.render('error',{
         title:'404',
-        error:'Help article Not Found',
+        error:'contact article Not Found',
         name:'MOHAMMAD UMAIR'
     })
 })
@@ -93,5 +92,5 @@ app.get('*',(req,res)=>{
 
 
 app.listen(port,()=>{
-    console.log('Server is UP')
-})
+    console.log('Server is UP on '+process.env.PORT)
+});

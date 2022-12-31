@@ -9,7 +9,7 @@ const messageSix = document.querySelector('#mSix')
 const divBox = document.querySelector('.wBox2')
 const image1 = document.querySelector('[data-label="image1"] img')
 
-weatherLoc.addEventListener('submit', ( event )=>{
+weatherLoc.addEventListener('submit', (event) => {
     event.preventDefault()
     document.querySelector('.wBox').style.display = 'block'
     const location = search.value
@@ -20,9 +20,9 @@ weatherLoc.addEventListener('submit', ( event )=>{
     weather(location)
 })
 
-const weather = ( location ) =>{
+const weather = (location) =>{
     fetch( `/weather?address=${location}` ).then((response)=>{
-        response.json().then(( data ) => {
+        response.json().then((data) => {
             console.log(data)
             if(data.error){
                 messageOne.textContent = ''
