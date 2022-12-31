@@ -17,6 +17,9 @@ img {
   width: 150px;
   height: 150px;
   border-radius: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 footer {
@@ -170,7 +173,7 @@ img[src=""] {
 
 @media (min-width: 850px) {
   .quote-wrapper {
-    width: 90%;
+    width: 100%;
   }
   .quote-wrapper::before {
     font-size: 300px;
