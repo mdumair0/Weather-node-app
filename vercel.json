@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "src/app.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "src/app.js" }
+    ],
+    "env": {
+        "MAPBOX_TOKEN": "",
+        "PERSONAL_MAIL": "",
+        "SENDGRID_API_KEY": "",
+        "WEATHERSTACK_KEY": ""
+    }
+  }
