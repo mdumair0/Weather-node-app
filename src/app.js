@@ -2,9 +2,8 @@ const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
-const req = require('request');
 const geoloc = require('../util/geocode');
 const forecast = require('../util/forecast');
 
@@ -86,5 +85,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log('Server is UP on ' + process.env.PORT);
+    console.log('Server is UP on ' + port);
 });
